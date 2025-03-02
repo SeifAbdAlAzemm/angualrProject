@@ -16,8 +16,10 @@ export class SignInComponent {
   signIn(): void {
     this.authService.signIn(this.credentials).subscribe(
       response => {
-        this.authService.saveToken(response.token);
-        this.router.navigate(['/']); // Redirect to home page
+        if(response.token){
+          this.authService.saveToken(response.token);
+          this.router.navigate(['/']);
+        }
       },
       error => {
         this.errorMessage = 'Invalid email or password!';

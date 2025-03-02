@@ -98,6 +98,13 @@ nav {
 .logo img {
     width: 100%;
 }
+.logout  {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    transition: color 0.3s;
+    cursor: pointer;
+}
 
 /* 🔹 HEADER SECTION */
 header {
