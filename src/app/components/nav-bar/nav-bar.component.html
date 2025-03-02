@@ -1,27 +1,24 @@
 <nav>
     <div class="container nav-bar">
-
         <!-- Dynamic Logo -->
         <span class="logo">
             <img [src]="logoSrc" alt="E-Market Logo">
         </span>
-        
+
         <!-- Dynamic Search Bar -->
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search..." aria-label="Search">
             <i class="fa fa-search" aria-hidden="true"></i>
         </div>
 
-                <!-- Dynamic Navigation Links -->
+        <!-- Dynamic Navigation Links -->
         <ul class="nav-items">
             <li *ngFor="let link of navLinks">
-                <a [routerLink]="link.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="shouldDisplayLink(link)">
+                <a [routerLink]="link.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                     {{ link.name }}
                 </a>
             </li>
             <li *ngIf="authService.isLoggedIn()" (click)="logout()" class="logout">Logout</li>
         </ul>
-
-        
     </div>
 </nav>

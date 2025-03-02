@@ -106,6 +106,10 @@ nav {
     cursor: pointer;
 }
 
+.logout:hover {
+    color: var(--primary-color);
+}
+
 /* 🔹 HEADER SECTION */
 header {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));

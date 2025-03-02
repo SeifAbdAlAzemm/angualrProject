@@ -21,7 +21,11 @@ export class ProductCardComponent {
     this.productService.getProducts().subscribe(
       (data) => {
         this.products = data; 
-        this.products.forEach(product => product.description.slice(0,5));
+        
+        this.products.forEach(product => {
+          product.title = product.title.split(' ').slice(0,3).join(' ');
+          product.description = product.description.split(' ').slice(0,12).join(' ');
+        });
       },
       (error) => {
         console.error('Error fetching products:', error);

@@ -1,43 +1,50 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private loginUrl = 'https://fakestoreapi.com/auth/login'; // Replace with your API URL
-  private registerUrl = 'https://fakestoreapi.com/users'; // Replace with your API URL
+  private loginUrl = 'https://fakestoreapi.com/auth/login'; 
+  private registerUrl = 'https://fakestoreapi.com/users';
+
+  private isAuthenticated = new BehaviorSubject<boolean>(this.hasToken()); // Track authentication status
 
   constructor(private http: HttpClient) {}
 
-  // Register a new user
-  register(user: any): Observable<any> {
+  private hasToken(): boolean {
+    return !!localStorage.getItem('authToken');
+  }
+
+  get authStatus$(): Observable<boolean> {
+    return this.isAuthenticated.asObservable();
+  }
+
+  register(user: User): Observable<any> {
     return this.http.post(`${this.registerUrl}`, user);
   }
 
-  // Sign in a user
   signIn(credentials: any): Observable<any> {
     return this.http.post(`${this.loginUrl}`, credentials);
   }
 
-  // Store user token in localStorage
   saveToken(token: string): void {
     localStorage.setItem('authToken', token);
+    this.isAuthenticated.next(true); // Notify subscribers
   }
 
-  // Get user token
   getToken(): string | null {
     return localStorage.getItem('authToken');
   }
 
-  // Logout
   logout(): void {
     localStorage.removeItem('authToken');
+    this.isAuthenticated.next(false); // Notify subscribers
   }
 
-  // Check if user is logged in
   isLoggedIn(): boolean {
-    return !!this.getToken();
+    return this.hasToken();
   }
 }

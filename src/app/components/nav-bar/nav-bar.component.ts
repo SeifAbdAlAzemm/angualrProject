@@ -1,33 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit, OnDestroy {
+  logoSrc: string = '../../../assets/logo.png';
+  navLinks: { name: string; url: string }[] = [];
+  authSubscription!: Subscription; 
+
   constructor(public authService: AuthService, private router: Router) {}
 
-  // Dynamic logo source
-  logoSrc: string = '../../../assets/logo.png';
+  ngOnInit(): void {
+    this.updateNavLinks(); // Initial check
 
-  // Dynamic navigation links
-  navLinks = [
-    { name: 'Home', url: '' },
-    { name: 'Register', url: 'register', requiresAuth: false },
-    { name: 'Sign in', url: 'sign-in', requiresAuth: false },
-    { name: 'Shop', url: 'shop', requiresAuth: true },
-    { name: 'Team', url: 'team', requiresAuth: true }
-  ];
+    // Subscribe to authentication status changes
+    this.authSubscription = this.authService.authStatus$.subscribe(() => {
+      this.updateNavLinks();
+    });
+  }
+
+  updateNavLinks(): void {
+    this.navLinks = this.authService.isLoggedIn()
+      ? [
+          { name: 'Home', url: '' },
+          { name: 'Shop', url: 'shop' },
+          { name: 'Team', url: 'team' }
+        ]
+      : [
+          { name: 'Home', url: '' },
+          { name: 'Register', url: 'register' },
+          { name: 'Sign in', url: 'sign-in' },
+        ];
+  }
 
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/sign-in']);
   }
 
-  shouldDisplayLink(link: { name: string; url: string; requiresAuth?: boolean }): boolean {
-    return link.requiresAuth === undefined || link.requiresAuth === this.authService.isLoggedIn();
+  ngOnDestroy(): void {
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe(); // Prevent memory leaks
+    }
   }
 }

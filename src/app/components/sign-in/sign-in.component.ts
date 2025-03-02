@@ -22,7 +22,7 @@ export class SignInComponent {
         }
       },
       error => {
-        this.errorMessage = 'Invalid email or password!';
+        this.errorMessage = 'Invalid username or password!';
       }
     );
   }
