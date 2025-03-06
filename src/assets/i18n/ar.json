@@ -1,0 +1,101 @@
+{
+    "NAV": {
+      "SEARCH_PLACEHOLDER": "بحث...",
+      "HOME": "الرئيسية",
+      "PRODUCTS": "المنتجات",
+      "SERVICES": "الخدمات",
+      "ABOUT": "من نحن",
+      "CONTACT": "اتصل بنا",
+      "TEAM": "الفريق",
+      "ACCOUNT": "حسابي",
+      "CART": "سلة التسوق",
+      "LOGIN": "تسجيل الدخول",
+      "REGISTER": "إنشاء حساب",
+      "LOGOUT": "تسجيل الخروج",
+      "LANGUAGE": "اللغة"
+    },"HEADER":{
+      "TITLE":"السوق الالكتروني",
+      "DESC":"لوريم إيبسوم دولور سيت أميت كونسيكتور أديبيسينج إيليت...",
+      "BUTTONTEXT":"اعرف اكتر"
+
+    },
+    "TEAM": {
+      "HEADER": "فريق العمل",
+      "MEMBER1":{
+"NAME":"جون دو",
+"ROLE":"مدير التسويق"
+      },
+      "MEMBER2": {
+        "NAME":"جين سميث",
+        "ROLE":"المطور الرئيسي"
+              },
+      "MEMBER3": {
+        "NAME":"مايك جونسون",
+        "ROLE":"مصمم واجهة المستخدم وتجربة المستخدم"
+              }
+    },
+    "BUTTONS": {
+      "SEARCH": "بحث",
+      "SUBMIT": "إرسال",
+      "CANCEL": "إلغاء",
+      "ADD_TO_CART": "أضف إلى السلة",
+      "BUY_NOW": "اشتري الآن",
+      "CHECKOUT": "إتمام الشراء",
+      "CONTINUE_SHOPPING": "مواصلة التسوق"
+    },
+    "PRODUCTS": {
+      "HEADER":"المنتجات",
+      "PRICE": "السعر",
+      "QUANTITY": "الكمية",
+      "AVAILABILITY": "التوفر",
+      "IN_STOCK": "متوفر",
+      "OUT_OF_STOCK": "غير متوفر",
+      "DESCRIPTION": "الوصف",
+      "SPECIFICATIONS": "المواصفات",
+      "REVIEWS": "التقييمات",
+      "RELATED_PRODUCTS": "منتجات ذات صلة"
+    },
+    "ACCOUNT": {
+      "PROFILE": "الملف الشخصي",
+      "ORDERS": "الطلبات",
+      "WISHLIST": "قائمة الرغبات",
+      "SETTINGS": "الإعدادات",
+      "ADDRESS": "العنوان",
+      "PAYMENT_METHODS": "طرق الدفع"
+    },
+    "HOME": {
+      "FEATURED_PRODUCTS": "منتجات مميزة",
+      "NEW_ARRIVALS": "وصل حديثاً",
+      "SPECIAL_OFFERS": "عروض خاصة",
+      "CATEGORIES": "التصنيفات",
+      "TRENDING": "الأكثر رواجاً"
+    },
+    "ERRORS": {
+      "REQUIRED": "هذا الحقل مطلوب",
+      "INVALID_EMAIL": "بريد إلكتروني غير صالح",
+      "INVALID_PASSWORD": "كلمة مرور غير صالحة",
+      "NOT_FOUND": "لم يتم العثور على الصفحة",
+      "SERVER_ERROR": "خطأ في الخادم"
+    },
+    "SIGNIN":{
+      "SEARCH_PLACEHOLDER_USERNAME": "اسم المستخدم",
+      "SEARCH_PLACEHOLDER_PASSWORD": "كلمة المرور",
+      "HEADER":"تسجيل الدخول",
+      "BUTTONTEXT":"تسجيل الدخول",
+      "ACCOUNT":"ليس لديك حساب؟",
+      "REGISTER":"إنشاء حساب"
+    }
+    ,"REGISTER":{
+      "SEARCH_PLACEHOLDER_USERNAME": "اسم المستخدم",
+      "SEARCH_PLACEHOLDER_EMAIL": "بريد إلكتروني",
+      "SEARCH_PLACEHOLDER_PASSWORD": "كلمة المرور",
+      "HEADER":"إنشاء حساب",
+      "BUTTONTEXT":"إنشاء حساب",
+      "ACCOUNT":"هل لديك حساب؟",
+      "SIGNIN":"تسجيل الدخول"
+    }
+    ,
+    "FOOTER":{
+      "TEXT":"2024 السوق الالكتروني. جميع الحقوق محفوظة©. "
+    }
+  }

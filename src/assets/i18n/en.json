@@ -1,0 +1,66 @@
+{
+    "NAV": {
+      "SEARCH_PLACEHOLDER": "Search...",
+      "HOME": "Home",
+      "PRODUCTS": "Products",
+      "SHOP": "Shop",
+      "TEAM": "Team",
+      "SERVICES": "Services",
+      "ABOUT": "About",
+      "CONTACT": "Contact",
+      "ACCOUNT": "My Account",
+      "CART": "Cart",
+      "LOGIN": "Sign in",
+      "REGISTER": "Register",
+      "LOGOUT": "Logout",
+      "LANGUAGE": "Language"
+    },"HEADER":{
+      "TITLE":"E-Market",
+      "DESC":"Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+      "BUTTONTEXT":"Learn More"
+
+    },"TEAM": {
+      "HEADER": "Team Members",
+      "MEMBER1":{
+"NAME":"John Doe",
+"ROLE":"Marketing Manager"
+      },
+      "MEMBER2": {
+        "NAME":"Jane Smith",
+        "ROLE":"Lead Developer"
+              },
+      "MEMBER3": {
+        "NAME":"Mike Johnson",
+        "ROLE":"UI/UX Designer"
+              }
+    },"PRODUCTS": {
+      "HEADER":"Products"},
+    "BUTTONS": {
+      "SEARCH": "Search",
+      "SUBMIT": "Submit",
+      "CANCEL": "Cancel",
+      "ADD_TO_CART": "Add to Cart",
+      "BUY_NOW": "Buy Now"
+    },
+    "SIGNIN":{
+      "SEARCH_PLACEHOLDER_USERNAME": "User Name",
+      "SEARCH_PLACEHOLDER_PASSWORD": "Password",
+      "HEADER":"Sign In",
+      "BUTTONTEXT":"Sign In",
+      "ACCOUNT":"Don't Have An Account?",
+      "REGISTER":"Register Here"
+    }
+    ,"REGISTER":{
+      "SEARCH_PLACEHOLDER_USERNAME": "User Name",
+      "SEARCH_PLACEHOLDER_EMAIL": "Email",
+      "SEARCH_PLACEHOLDER_PASSWORD": "Password",
+      "HEADER":"Register",
+      "BUTTONTEXT":"Register",
+      "ACCOUNT":"You Have an account?",
+      "SIGNIN":"Sign In"
+    }
+    ,
+    "FOOTER":{
+      "TEXT":"© 2024 E-Market. All rights reserved."
+    }
+  }

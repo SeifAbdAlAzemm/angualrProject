@@ -1,11 +1,11 @@
 <header>
     <div class="container">
         <section class="welcome-msg">
-            <div class="welcome-msg-content">
-                <h1>{{ title }}</h1>
-                <p>{{ description }}</p>
-                <a [href]="buttonLink" class="btn-learn-more" aria-label="Learn more about">
-                    {{ buttonText }}
+            <div *ngFor="let header of header" class="welcome-msg-content">
+                <h1>{{ header.translationKeyTitle | translate }}</h1>
+                <p>{{ header.translationKeyDesc | translate }}</p>
+                <a [href]="header.buttonLink" class="btn-learn-more" aria-label="Learn more about">
+                    {{ header.translationKeyButtontext | translate }}
                 </a>
             </div>
 

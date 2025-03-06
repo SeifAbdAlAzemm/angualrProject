@@ -7,18 +7,26 @@
 
         <!-- Dynamic Search Bar -->
         <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search..." aria-label="Search">
+            <input type="text" class="search-input" [placeholder]="'NAV.SEARCH_PLACEHOLDER' | translate" aria-label="Search">
             <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+
+        <div class="language-switcher">
+            <select #langSelect (change)="switchLanguage(langSelect.value)">
+                <option *ngFor="let lang of languages" [value]="lang.code">
+                  {{ lang.name }}
+                </option>
+            </select>
         </div>
 
         <!-- Dynamic Navigation Links -->
         <ul class="nav-items">
             <li *ngFor="let link of navLinks">
                 <a [routerLink]="link.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    {{ link.name }}
+                    {{ link.translationKey | translate }}
                 </a>
             </li>
-            <li *ngIf="authService.isLoggedIn()" (click)="logout()" class="logout">Logout</li>
+            <li *ngIf="authService.isLoggedIn()" (click)="logout()" class="logout">{{ 'NAV.LOGOUT' | translate }}</li>
         </ul>
     </div>
 </nav>

@@ -1,0 +1,101 @@
+{
+    "NAV": {
+      "SEARCH_PLACEHOLDER": "Rechercher...",
+      "HOME": "Accueil",
+      "PRODUCTS": "Produits",
+      "SERVICES": "Services",
+      "ABOUT": "À propos",
+      "TEAM": "Équipe",
+      "CONTACT": "Contact",
+      "ACCOUNT": "Mon compte",
+      "CART": "Panier",
+      "LOGIN": "Connexion",
+      "REGISTER": "S'inscrire",
+      "LOGOUT": "Déconnexion",
+      "LANGUAGE": "Langue"
+    },
+    "HEADER":{
+      "TITLE":"E-marché",
+      "DESC":"Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+      "BUTTONTEXT":"Apprendre Encore"
+
+    },"TEAM": {
+      "HEADER": "Membres De L'Équipe",
+      "MEMBER1":{
+"NAME":"John Doe",
+"ROLE":"Directeur Marketing"
+      },
+      "MEMBER2": {
+        "NAME":"Jane Smith",
+        "ROLE":"Développeur principal"
+              },
+      "MEMBER3": {
+        "NAME":"Mike Johnson",
+        "ROLE":"Concepteur UI/UX"
+              }
+    },
+    "BUTTONS": {
+      "SEARCH": "Rechercher",
+      "SUBMIT": "Soumettre",
+      "CANCEL": "Annuler",
+      "ADD_TO_CART": "Ajouter au panier",
+      "BUY_NOW": "Acheter maintenant",
+      "CHECKOUT": "Commander",
+      "CONTINUE_SHOPPING": "Continuer les achats"
+    },
+    "PRODUCTS": {
+      "HEADER":"Produits",
+      "PRICE": "Prix",
+      "QUANTITY": "Quantité",
+      "AVAILABILITY": "Disponibilité",
+      "IN_STOCK": "En stock",
+      "OUT_OF_STOCK": "Rupture de stock",
+      "DESCRIPTION": "Description",
+      "SPECIFICATIONS": "Spécifications",
+      "REVIEWS": "Avis",
+      "RELATED_PRODUCTS": "Produits associés"
+    },
+    "ACCOUNT": {
+      "PROFILE": "Profil",
+      "ORDERS": "Commandes",
+      "WISHLIST": "Liste de souhaits",
+      "SETTINGS": "Paramètres",
+      "ADDRESS": "Adresse",
+      "PAYMENT_METHODS": "Méthodes de paiement"
+    },
+    "HOME": {
+      "FEATURED_PRODUCTS": "Produits en vedette",
+      "NEW_ARRIVALS": "Nouveautés",
+      "SPECIAL_OFFERS": "Offres spéciales",
+      "CATEGORIES": "Catégories",
+      "TRENDING": "Tendances"
+    },
+    "ERRORS": {
+      "REQUIRED": "Ce champ est obligatoire",
+      "INVALID_EMAIL": "Adresse e-mail invalide",
+      "INVALID_PASSWORD": "Mot de passe invalide",
+      "NOT_FOUND": "Page non trouvée",
+      "SERVER_ERROR": "Erreur du serveur"
+    },
+    "SIGNIN":{
+      "SEARCH_PLACEHOLDER_USERNAME": "Nom D'Utilisateur",
+      "SEARCH_PLACEHOLDER_PASSWORD": "Mot De Passe",
+      "HEADER":"Connexion",
+      "BUTTONTEXT":"Connexion",
+      "ACCOUNT":"Vous n'avez pas de compte ?",
+      "REGISTER":"S'inscrire"
+    }
+    ,"REGISTER":{
+      "SEARCH_PLACEHOLDER_USERNAME": "Nom D'Utilisateur",
+      "SEARCH_PLACEHOLDER_EMAIL": "Courriel",
+      "SEARCH_PLACEHOLDER_PASSWORD": "Mot De Passe",
+      "HEADER":"S'inscrire",
+      "BUTTONTEXT":"S'inscrire",
+      "ACCOUNT":"Vous avez déjà un compte ?",
+      "SIGNIN":"Connexion"
+    }
+    ,
+    "FOOTER":{
+      "TEXT":"© 2024 E-Marché. Tous droits réservés."
+    }
+  }

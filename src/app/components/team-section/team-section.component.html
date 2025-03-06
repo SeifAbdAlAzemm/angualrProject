@@ -1,23 +1,15 @@
 <section class="team">
-    <h2 class="section-header">Team Members</h2>
+    <div *ngFor="let team of teamHeader"   >
+    <h2 class="section-header">{{team.translationKey | translate}}</h2>
+    </div>
 
     <div class="d-flex justify-content-center flex-wrap gap-5">
-        <app-team-card 
-            name="John Doe" 
-            role="Marketing Manager" 
-            imageSrc="../../../assets/team-01.png">
-        </app-team-card>
-
-        <app-team-card 
-            name="Jane Smith" 
-            role="Lead Developer" 
-            imageSrc="../../../assets/team-02.png">
-        </app-team-card>
-
-        <app-team-card 
-            name="Mike Johnson" 
-            role="UI/UX Designer" 
-            imageSrc="../../../assets/team-03.png">
-        </app-team-card>
+        <div *ngFor="let team of teamMembers"  class="team-member-card " >
+            <div class="team-member-img">
+                <img [src]="team.imageSrc" [alt]="team.name">
+            </div>
+            <p class="member-name">{{ team.translationKeyName | translate }}</p>
+            <p class="member-desc">{{ team.translationKeyRole | translate}}</p>
+        </div>
     </div>
 </section>

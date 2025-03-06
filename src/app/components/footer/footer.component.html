@@ -1,5 +1,5 @@
 <footer>
-    <div class="container">
-        <p>{{ footerMsg }}</p>
-    </div>
+        <div class="container" *ngFor="let footer of footer"   >
+            <h2 class="h5">{{footer.translationKey | translate}}</h2>
+            </div>
 </footer>

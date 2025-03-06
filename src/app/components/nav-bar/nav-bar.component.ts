@@ -2,6 +2,15 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { LanguageService } from '../../services/language.service';
+
+
+// Define a new interface for navigation links that includes translationKey
+interface NavLink {
+  name: string;
+  url: string;
+  translationKey: string;
+}
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,11 +18,33 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit, OnDestroy {
+  [x: string]: any;
+
+  languages = [
+    { code: 'en', name: 'English' },
+    { code: 'fr', name: 'Français' },
+    { code: 'ar', name: 'العربية' }
+  ];
+  currentLang: string;
+
+  switchLanguage(lang: string) {
+    this.languageService.changeLanguage(lang);
+    this.currentLang = lang;
+    // Update nav links to reflect language change
+    this.updateNavLinks();
+  }
+
   logoSrc: string = '../../../assets/logo.png';
-  navLinks: { name: string; url: string }[] = [];
+  navLinks: NavLink[] = [];
   authSubscription!: Subscription; 
 
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(
+    public authService: AuthService, 
+    private router: Router,
+    public languageService: LanguageService
+  ) {
+    this.currentLang = this.languageService.getCurrentLanguage();
+  }
 
   ngOnInit(): void {
     this.updateNavLinks(); // Initial check
@@ -25,17 +56,19 @@ export class NavBarComponent implements OnInit, OnDestroy {
   }
 
   updateNavLinks(): void {
-    this.navLinks = this.authService.isLoggedIn()
-      ? [
-          { name: 'Home', url: '' },
-          { name: 'Shop', url: 'shop' },
-          { name: 'Team', url: 'team' }
-        ]
-      : [
-          { name: 'Home', url: '' },
-          { name: 'Register', url: 'register' },
-          { name: 'Sign in', url: 'sign-in' },
-        ];
+    if (this.authService.isLoggedIn()) {
+      this.navLinks = [
+        { name: 'Home', url: '', translationKey: 'NAV.HOME' },
+        { name: 'Shop', url: 'shop', translationKey: 'NAV.PRODUCTS' },
+        { name: 'Team', url: 'team', translationKey: 'NAV.TEAM' }
+      ];
+    } else {
+      this.navLinks = [
+        { name: 'Home', url: '', translationKey: 'NAV.HOME' },
+        { name: 'Register', url: 'register', translationKey: 'NAV.REGISTER' },
+        { name: 'Sign in', url: 'sign-in', translationKey: 'NAV.LOGIN' }
+      ];
+    }
   }
 
   logout(): void {

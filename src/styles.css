@@ -30,6 +30,25 @@ body {
     margin: 0 auto;
 }
 
+html[dir="rtl"] {
+    
+    text-align: right;
+}
+select {
+    padding: 8px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    outline: none;
+    width: 88px;
+    transition: width 0.3s;
+    appearance: none;
+  }
+
+    .language-switcher {
+      direction: rtl;
+
+    }
+
 /* 🔹 NAVIGATION BAR */
 nav {
     background: var(--light-color);
